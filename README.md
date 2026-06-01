@@ -6,7 +6,7 @@
 
 ## 📋 Descripción General
 
-Este proyecto implementa un **sistema de permisos multinuenta** que permite que usuarios de una cuenta AWS accedan a recursos de otra cuenta con permisos controlados y limitados.
+Este proyecto implementa un **sistema de permisos multicuenta** que permite que usuarios de una cuenta AWS accedan a recursos de otra cuenta con permisos controlados y limitados.
 
 **Objetivo:** Aprender a implementar least privilege principle, separar entornos (Dev/Staging/Prod) y auditar accesos con CloudTrail.
 
@@ -98,9 +98,8 @@ cd proyecto10-iam-cross-account
 
 # 2. Edita terraform.tfvars
 code terraform.tfvars
-# Cambia:
 # - production_account_id = tu cuenta actual
-# - trusted_account_id = cuenta que confía (puede ser la misma para testing)
+# - trusted_account_id = cuenta para testing
 
 # 3. Inicializa Terraform
 terraform init
@@ -431,20 +430,6 @@ aws iam simulate-principal-policy \
 
 # Resultado: EvalDecision = implicitDeny
 ```
-
----
-
-## 💰 Costos Estimados
-
-**Este proyecto tiene COSTO CERO:**
-- IAM Roles: Gratis
-- CloudTrail: ~$2/trail (después de 1 trail gratis)
-- S3 para logs: ~$0.50/GB/mes
-- CloudWatch Logs: ~$0.50/GB/mes
-
-**Total: ~$3-5/mes**
-
----
 
 ## 📚 Recursos Adicionales
 
